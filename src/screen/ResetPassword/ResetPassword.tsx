@@ -96,7 +96,7 @@ const styles = StyleSheet.create({
   speratorText: {
     fontFamily: 'Be Vietnam',
     fontSize: 10,
-    fontWeight: 500,
+    fontWeight: '500',
     lineHeight: 14.61,
     textAlign: 'center',
     color: 'rgba(38, 28, 18, 0.3)',
@@ -111,13 +111,14 @@ const styles = StyleSheet.create({
   welcomeText: {
     fontFamily: 'Be Vietnam',
     fontSize: 32,
-    fontWeight: 700,
+    fontWeight: '700',
     lineHeight: 46.75,
+    color : '#444',
   },
   label: {
     fontFamily: 'Be Vietnam',
     fontSize: 14,
-    fontWeight: 500,
+    fontWeight: '500',
     lineHeight: 20.45,
     textAlign: 'left',
     color: '#0000004D',

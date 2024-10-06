@@ -90,15 +90,16 @@ const styles = StyleSheet.create({
   },
   welcomeText: {
     fontFamily: 'Be Vietnam',
+    color : '#444',
     fontSize: 32,
-    fontWeight: 700,
+    fontWeight: '700',
     lineHeight: 46.75,
     marginBottom: '8%',
   },
   label: {
     fontFamily: 'Be Vietnam',
     fontSize: 14,
-    fontWeight: 500,
+    fontWeight: '500',
     lineHeight: 20.45,
     textAlign: 'left',
     color: '#0000004D',

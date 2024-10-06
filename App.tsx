@@ -50,9 +50,7 @@ function AppNavigator() {
       ) : (
         <NavigationContainer>
           <Stack.Navigator
-            initialRouteName={
-              !isOnboardingComplete ? 'Onboarding' : 'ResetPassword'
-            }
+            initialRouteName={!isOnboardingComplete ? 'Onboarding' : 'Login'}
             screenOptions={{
               headerShown: false,
             }}>

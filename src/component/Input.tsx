@@ -71,7 +71,7 @@ const styles = StyleSheet.create({
   rightBtnText: {
     fontFamily: 'Be Vietnam',
     fontSize: 14,
-    fontWeight: 500,
+    fontWeight: '500',
     lineHeight: 20.45,
     textAlign: 'center',
     color: '#D5715B',
@@ -92,7 +92,7 @@ const styles = StyleSheet.create({
     width: '100%',
     height: '100%',
     fontSize: 16,
-    fontWeight: 500,
+    fontWeight: '500',
     textAlign: 'left',
     color: '#000000',
     paddingLeft: 10,

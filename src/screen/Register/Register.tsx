@@ -3,6 +3,7 @@ import {
   Alert,
   Dimensions,
   Image,
+  Platform,
   StyleSheet,
   Text,
   TouchableOpacity,
@@ -20,6 +21,7 @@ import RegisterSuccess from './Steps/RegisterSuccess';
 import {useNavigation} from '@react-navigation/native';
 import {RegisterationData} from './register-types';
 import {apiRegister} from '../../apis';
+
 const width = Dimensions.get('screen').width - 40;
 
 const Register = () => {
@@ -91,7 +93,7 @@ const Register = () => {
     try {
       setLoading(true);
       const response: any = await apiRegister(registerData);
-      if (response.data.message) {
+      if (response.data.message === 'Registered.') {
         Alert.alert(
           '',
           response.data.message,
@@ -105,6 +107,8 @@ const Register = () => {
           ],
           {cancelable: false},
         );
+      } else {
+        Alert.alert(response.data.message);
       }
 
       setLoading(false);
@@ -194,6 +198,8 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'space-between',
     marginTop: 30,
+    padding: 10,
+    paddingBottom: Platform.OS === 'android' ? 30 : 0,
   },
   scrollContainer: {
     alignItems: 'flex-start',
@@ -208,7 +214,7 @@ const styles = StyleSheet.create({
   welcomeText: {
     fontFamily: 'Be Vietnam',
     fontSize: 32,
-    fontWeight: 700,
+    fontWeight: '700',
     lineHeight: 46.75,
     marginBottom: '8%',
   },
@@ -222,7 +228,7 @@ const styles = StyleSheet.create({
   label: {
     fontFamily: 'Be Vietnam',
     fontSize: 14,
-    fontWeight: 500,
+    fontWeight: '500',
     lineHeight: 20.45,
     textAlign: 'left',
     color: '#0000004D',

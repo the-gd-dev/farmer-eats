@@ -15,7 +15,7 @@ const styles = StyleSheet.create({
   speratorText: {
     fontFamily: 'Be Vietnam',
     fontSize: 10,
-    fontWeight: 500,
+    fontWeight: '500',
     lineHeight: 14.61,
     textAlign: 'center',
     color: 'rgba(38, 28, 18, 0.3)',

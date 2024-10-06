@@ -28,7 +28,7 @@ const styles = StyleSheet.create({
   heading: {
     fontFamily: 'Be Vietnam',
     fontSize: 32,
-    fontWeight: 700,
+    fontWeight: '700',
     lineHeight: 46.75,
     textAlign: 'center',
     marginVertical: 30,
@@ -36,7 +36,7 @@ const styles = StyleSheet.create({
   description: {
     fontFamily: 'Be Vietnam',
     fontSize: 12,
-    fontWeight: 400,
+    fontWeight: '400',
     lineHeight: 17.53,
     textAlign: 'center',
   },

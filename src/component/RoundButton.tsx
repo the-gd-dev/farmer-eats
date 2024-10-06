@@ -48,7 +48,7 @@ const styles = StyleSheet.create({
   btnText: {
     fontFamily: 'Be Vietnam',
     fontSize: 18,
-    fontWeight: 500,
+    fontWeight: '500',
     lineHeight: 26.3,
     textAlign: 'center',
     color: 'white',

@@ -119,7 +119,7 @@ const Onboarding = () => {
                 }
               }}
               btnStyle={{
-                maxWidth: 200,
+                maxWidth: '100%',
                 paddingHorizontal: 25,
                 backgroundColor: onboardingContent[currentIndex].color,
               }}
@@ -159,7 +159,7 @@ const styles = StyleSheet.create({
     width: Dimensions.get('screen').width,
     borderTopStartRadius: 49,
     borderTopEndRadius: 49,
-    paddingVertical: 35,
+    paddingVertical: '15%',
     paddingHorizontal: 20,
     justifyContent: 'space-between',
     alignItems: 'center',
@@ -167,7 +167,7 @@ const styles = StyleSheet.create({
   label: {
     fontFamily: 'Be Vietnam',
     fontSize: 14,
-    fontWeight: 400,
+    fontWeight: '400',
     lineHeight: 20.45,
     textAlign: 'left',
     color: '#000000',
@@ -176,7 +176,7 @@ const styles = StyleSheet.create({
   desc: {
     fontFamily: 'Be Vietnam',
     fontSize: 14,
-    fontWeight: 400,
+    fontWeight: '400',
     lineHeight: 20.45,
     textAlign: 'center',
     color: '#000000',
@@ -187,7 +187,7 @@ const styles = StyleSheet.create({
     height: 60,
     fontFamily: 'Be Vietnam',
     fontSize: 24,
-    fontWeight: 700,
+    fontWeight: '700',
     lineHeight: 35.06,
     textAlign: 'center',
   },

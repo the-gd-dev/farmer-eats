@@ -6,6 +6,7 @@ import SeperatorText from '../../../component/SeperatorText';
 import SocialLinkButtons from '../../../component/SocialLinkButtons';
 import {RegisterationData} from '../register-types';
 
+
 const Step1 = ({
   regData,
   handleRegisterData,
@@ -79,14 +80,15 @@ const styles = StyleSheet.create({
   welcomeText: {
     fontFamily: 'Be Vietnam',
     fontSize: 32,
-    fontWeight: 700,
+    fontWeight: '700',
     lineHeight: 46.75,
+    color : '#444',
     marginBottom: '8%',
   },
   label: {
     fontFamily: 'Be Vietnam',
     fontSize: 14,
-    fontWeight: 500,
+    fontWeight: '500',
     lineHeight: 20.45,
     textAlign: 'left',
     color: '#0000004D',

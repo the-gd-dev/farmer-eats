@@ -1,5 +1,5 @@
 import React from 'react';
-import {View, StatusBar, StyleSheet, Text} from 'react-native';
+import {View, StatusBar, StyleSheet, Text, Platform} from 'react-native';
 import {SafeAreaView, useSafeAreaInsets} from 'react-native-safe-area-context';
 
 interface SafeAreaContainerProps {
@@ -27,7 +27,17 @@ const SafeAreaContainer: React.FC<SafeAreaContainerProps> = ({
             paddingHorizontal: 20,
           },
         ]}>
-        {isShowTitle && <Text style={styles.heading}>FarmerEats</Text>}
+        {isShowTitle && (
+          <Text
+            style={[
+              styles.heading,
+              {
+                marginTop: Platform.OS === 'android' ? '10%' : 0,
+              },
+            ]}>
+            FarmerEats
+          </Text>
+        )}
         {children}
       </View>
     </SafeAreaView>
@@ -43,8 +53,9 @@ const styles = StyleSheet.create({
   },
   heading: {
     fontFamily: 'Be Vietnam',
-    fontSize: 16,
-    fontWeight: 400,
+    fontSize: 18,
+    color : '#333',
+    fontWeight: '400',
     lineHeight: 23.38,
     textAlign: 'left',
   },

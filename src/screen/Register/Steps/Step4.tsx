@@ -1,4 +1,4 @@
-import React, {useEffect, useMemo, useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import {StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 import {RegisterationData} from '../register-types';
 import moment from 'moment';
@@ -182,7 +182,7 @@ const styles = StyleSheet.create({
     color: 'rgba(38, 28, 18, 1)',
     fontFamily: 'Be Vietnam',
     fontSize: 14,
-    fontWeight: 400,
+    fontWeight: '400',
     lineHeight: 20.45,
     textAlign: 'center',
   },
@@ -197,7 +197,7 @@ const styles = StyleSheet.create({
   dayText: {
     fontFamily: 'Be Vietnam',
     fontSize: 14,
-    fontWeight: 500,
+    fontWeight: '500',
     lineHeight: 20.45,
     textAlign: 'left',
   },
@@ -209,14 +209,15 @@ const styles = StyleSheet.create({
   welcomeText: {
     fontFamily: 'Be Vietnam',
     fontSize: 32,
-    fontWeight: 700,
+    fontWeight: '700',
     lineHeight: 46.75,
     marginBottom: '8%',
+    color : '#444',
   },
   label: {
     fontFamily: 'Be Vietnam',
     fontSize: 14,
-    fontWeight: 500,
+    fontWeight: '500',
     lineHeight: 20.45,
     textAlign: 'left',
     color: '#0000004D',
