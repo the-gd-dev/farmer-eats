@@ -60,6 +60,7 @@ const Onboarding = () => {
       scrollToIndex(currentIndex);
     }
   }, [currentIndex]);
+
   const navigateToLogin = async () => {
     try {
       await AsyncStorage.setItem('@onboarding-done', 'true');
@@ -68,6 +69,7 @@ const Onboarding = () => {
       console.error('Failed to set data to AsyncStorage', error);
     }
   };
+
   return (
     <SafeAreaContainer
       isShowTitle={false}
@@ -159,7 +161,8 @@ const styles = StyleSheet.create({
     width: Dimensions.get('screen').width,
     borderTopStartRadius: 49,
     borderTopEndRadius: 49,
-    paddingVertical: '15%',
+    paddingTop: Dimensions.get('screen').height / 25,
+    paddingBottom: Dimensions.get('screen').height / 10,
     paddingHorizontal: 20,
     justifyContent: 'space-between',
     alignItems: 'center',
@@ -179,7 +182,7 @@ const styles = StyleSheet.create({
     fontWeight: '400',
     lineHeight: 20.45,
     textAlign: 'center',
-    color: '#000000',
+    color: '#444444',
     height: 65,
     maxWidth: '85%',
   },
@@ -187,6 +190,7 @@ const styles = StyleSheet.create({
     height: 60,
     fontFamily: 'Be Vietnam',
     fontSize: 24,
+    color: '#333333',
     fontWeight: '700',
     lineHeight: 35.06,
     textAlign: 'center',

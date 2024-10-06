@@ -6,6 +6,7 @@ import Input from '../../component/Input';
 import RoundButton from '../../component/RoundButton';
 import SafeAreaContainer from '../../component/SafeAreaContainer';
 import {forgotPassword} from '../../apis';
+import {KeyboardAwareScrollView} from 'react-native-keyboard-aware-scroll-view';
 
 const ForgotPassword = () => {
   const navigation: any = useNavigation();
@@ -49,27 +50,29 @@ const ForgotPassword = () => {
 
   return (
     <SafeAreaContainer>
-      <View style={styles.container}>
-        <Text style={styles.welcomeText}>Forgot Password?</Text>
-        <View style={{flexDirection: 'row', gap: 5, marginTop: 20}}>
-          <Text style={styles.label}>Remember your pasword?</Text>
-          <TouchableOpacity onPress={() => navigation.navigate('Login')}>
-            <Text style={[styles.label, {color: '#D5715B'}]}>Login</Text>
-          </TouchableOpacity>
+      <KeyboardAwareScrollView showsVerticalScrollIndicator={false}>
+        <View style={styles.container}>
+          <Text style={styles.welcomeText}>Forgot Password?</Text>
+          <View style={{flexDirection: 'row', gap: 5, marginTop: 20}}>
+            <Text style={styles.label}>Remember your pasword?</Text>
+            <TouchableOpacity onPress={() => navigation.navigate('Login')}>
+              <Text style={[styles.label, {color: '#D5715B'}]}>Login</Text>
+            </TouchableOpacity>
+          </View>
+          <View style={{marginTop: '20%'}}>
+            <Input
+              imageUri={call}
+              placeholder="Phone Number"
+              onChange={(num: any) => setPhone(num)}
+            />
+            <RoundButton
+              btnText="Send Code"
+              onPress={handleSubmit}
+              isDisabled={loading}
+            />
+          </View>
         </View>
-        <View style={{marginTop: '20%'}}>
-          <Input
-            imageUri={call}
-            placeholder="Phone Number"
-            onChange={(num: any) => setPhone(num)}
-          />
-          <RoundButton
-            btnText="Send Code"
-            onPress={handleSubmit}
-            isDisabled={loading}
-          />
-        </View>
-      </View>
+      </KeyboardAwareScrollView>
     </SafeAreaContainer>
   );
 };
@@ -96,7 +99,7 @@ const styles = StyleSheet.create({
     fontFamily: 'Be Vietnam',
     fontSize: 32,
     fontWeight: '700',
-    color : '#444',
+    color: '#444',
     lineHeight: 46.75,
   },
   label: {

@@ -15,6 +15,7 @@ import RoundButton from '../../component/RoundButton';
 import Input from '../../component/Input';
 import {useNavigation} from '@react-navigation/native';
 import {verifyOTP} from '../../apis';
+import {KeyboardAwareScrollView} from 'react-native-keyboard-aware-scroll-view';
 
 const VerifyOTP = () => {
   const navigation: any = useNavigation();
@@ -84,41 +85,43 @@ const VerifyOTP = () => {
 
   return (
     <SafeAreaContainer>
-      <View style={styles.container}>
-        <Text style={styles.welcomeText}>Verify OTP</Text>
-        <View style={{flexDirection: 'row', gap: 5, marginTop: 20}}>
-          <Text style={styles.label}>Remember your pasword?</Text>
-          <TouchableOpacity
-            onPress={() => {
-              navigation.navigate('Login');
-            }}>
-            <Text style={[styles.label, {color: '#D5715B'}]}>Login</Text>
-          </TouchableOpacity>
-        </View>
-        <View style={styles.otpContainer}>
-          {otp.map((value, index) => (
-            <Input
-              key={index}
-              ref={ref => (inputRefs.current[index] = ref)}
-              onChange={text => handleOtpChange(text, index)}
-              inputStyle={styles.otpInput}
-              onKeyPress={(e: any) => handleKeyPress(e, index)}
-              maxLength={1}
-              value={value}
+      <KeyboardAwareScrollView showsVerticalScrollIndicator={false}>
+        <View style={styles.container}>
+          <Text style={styles.welcomeText}>Verify OTP</Text>
+          <View style={{flexDirection: 'row', gap: 5, marginTop: 20}}>
+            <Text style={styles.label}>Remember your pasword?</Text>
+            <TouchableOpacity
+              onPress={() => {
+                navigation.navigate('Login');
+              }}>
+              <Text style={[styles.label, {color: '#D5715B'}]}>Login</Text>
+            </TouchableOpacity>
+          </View>
+          <View style={styles.otpContainer}>
+            {otp.map((value, index) => (
+              <Input
+                key={index}
+                ref={ref => (inputRefs.current[index] = ref)}
+                onChange={text => handleOtpChange(text, index)}
+                inputStyle={styles.otpInput}
+                onKeyPress={(e: any) => handleKeyPress(e, index)}
+                maxLength={1}
+                value={value}
+              />
+            ))}
+          </View>
+          <View>
+            <RoundButton
+              btnText="Submit"
+              onPress={handleSubmit}
+              isDisabled={loading}
             />
-          ))}
+            <TouchableOpacity onPress={handleResendCode}>
+              <Text style={styles.resendCode}>Resend Code</Text>
+            </TouchableOpacity>
+          </View>
         </View>
-        <View>
-          <RoundButton
-            btnText="Submit"
-            onPress={handleSubmit}
-            isDisabled={loading}
-          />
-          <TouchableOpacity onPress={handleResendCode}>
-            <Text style={styles.resendCode}>Resend Code</Text>
-          </TouchableOpacity>
-        </View>
-      </View>
+      </KeyboardAwareScrollView>
     </SafeAreaContainer>
   );
 };
