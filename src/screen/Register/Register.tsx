@@ -21,7 +21,7 @@ import RegisterSuccess from './Steps/RegisterSuccess';
 import {useNavigation} from '@react-navigation/native';
 import {RegisterationData} from './register-types';
 import {apiRegister} from '../../apis';
-
+import {KeyboardAwareScrollView} from 'react-native-keyboard-aware-scroll-view';
 const width = Dimensions.get('screen').width - 40;
 
 const Register = () => {
@@ -41,10 +41,6 @@ const Register = () => {
       sat: [],
     },
   });
-
-  useEffect(() => {
-    console.log('registerData----->', registerData);
-  }, [registerData]);
 
   const steps = [
     {
@@ -128,12 +124,17 @@ const Register = () => {
           showsHorizontalScrollIndicator={false}
           contentContainerStyle={styles.scrollContainer}>
           {steps.map((step, index) => (
-            <View key={step.id} style={{width: width}}>
-              {step.Component({
-                regData: registerData,
-                handleRegisterData: (v: any) => setRegisterData(v),
-              })}
-            </View>
+            <KeyboardAwareScrollView
+              key={step.id}
+              extraScrollHeight={-150}
+              showsVerticalScrollIndicator={false}>
+              <View style={{width: width}}>
+                {step.Component({
+                  regData: registerData,
+                  handleRegisterData: (v: any) => setRegisterData(v),
+                })}
+              </View>
+            </KeyboardAwareScrollView>
           ))}
         </ScrollView>
         <View>
@@ -197,8 +198,6 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-between',
-    marginTop: 30,
-    padding: 10,
     paddingBottom: Platform.OS === 'android' ? 30 : 0,
   },
   scrollContainer: {
@@ -231,6 +230,6 @@ const styles = StyleSheet.create({
     fontWeight: '500',
     lineHeight: 20.45,
     textAlign: 'left',
-    color: '#0000004D',
+    color: 'rgba(0, 0, 0, 0.3)',
   },
 });

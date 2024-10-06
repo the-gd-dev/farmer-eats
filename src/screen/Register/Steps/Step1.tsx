@@ -6,7 +6,6 @@ import SeperatorText from '../../../component/SeperatorText';
 import SocialLinkButtons from '../../../component/SocialLinkButtons';
 import {RegisterationData} from '../register-types';
 
-
 const Step1 = ({
   regData,
   handleRegisterData,
@@ -82,7 +81,7 @@ const styles = StyleSheet.create({
     fontSize: 32,
     fontWeight: '700',
     lineHeight: 46.75,
-    color : '#444',
+    color: '#444',
     marginBottom: '8%',
   },
   label: {
@@ -91,6 +90,6 @@ const styles = StyleSheet.create({
     fontWeight: '500',
     lineHeight: 20.45,
     textAlign: 'left',
-    color: '#0000004D',
+    color: 'rgba(0, 0, 0, 0.3)',
   },
 });

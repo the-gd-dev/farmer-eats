@@ -1,10 +1,16 @@
-import {Image, StyleSheet, Text, View} from 'react-native';
+import {Dimensions, Image, StyleSheet, Text, View} from 'react-native';
 import React from 'react';
 import {checkGreen} from '../../../assets';
 
 const RegisterSuccess = () => {
   return (
-    <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
+    <View
+      style={{
+        flex: 1,
+        justifyContent: 'center',
+        alignItems: 'center',
+        marginTop: Dimensions.get('screen').height / 4,
+      }}>
       <Image
         source={checkGreen}
         style={{
@@ -32,6 +38,7 @@ const styles = StyleSheet.create({
     lineHeight: 46.75,
     textAlign: 'center',
     marginVertical: 30,
+    color: '#444',
   },
   description: {
     fontFamily: 'Be Vietnam',
@@ -39,5 +46,6 @@ const styles = StyleSheet.create({
     fontWeight: '400',
     lineHeight: 17.53,
     textAlign: 'center',
+    color: '#444',
   },
 });

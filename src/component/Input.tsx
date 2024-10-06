@@ -42,6 +42,7 @@ const Input = forwardRef(
           )}
           <TextInput
             autoCapitalize="none"
+            placeholderTextColor={'rgba(0, 0, 0, 0.4)'}
             secureTextEntry={isSecure}
             keyboardType="default"
             value={value}

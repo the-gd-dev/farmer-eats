@@ -50,19 +50,10 @@ const Step3 = ({
           Fresh, USDA Approved, USDA Organic
         </Text>
       </View>
-      <View
-        style={{
-          flexDirection: 'row',
-          alignItems: 'center',
-          justifyContent: 'space-between',
-          marginTop: 20,
-        }}>
+      <View style={styles.labelContainer}>
         <Text
           style={{
-            fontFamily: 'Be Vietnam',
-            fontSize: 14,
-            fontWeight: '400',
-            lineHeight: 20.45,
+            ...styles.label,
             textAlign: 'center',
             textDecorationLine: 'underline',
           }}>
@@ -117,10 +108,16 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     columnGap: 16,
   },
+  labelContainer: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    marginTop: 20,
+  },
   welcomeText: {
     fontFamily: 'Be Vietnam',
     fontSize: 32,
-    color : '#444',
+    color: '#444',
     fontWeight: '700',
     lineHeight: 46.75,
     marginBottom: '8%',
@@ -131,6 +128,6 @@ const styles = StyleSheet.create({
     fontWeight: '500',
     lineHeight: 20.45,
     textAlign: 'left',
-    color: '#0000004D',
+    color: 'rgba(0, 0, 0, 0.3)',
   },
 });

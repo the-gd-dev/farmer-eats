@@ -8,6 +8,7 @@ import RoundButton from '../../component/RoundButton';
 import SafeAreaContainer from '../../component/SafeAreaContainer';
 import SeperatorText from '../../component/SeperatorText';
 import SocialLinkButtons from '../../component/SocialLinkButtons';
+import {KeyboardAwareScrollView} from 'react-native-keyboard-aware-scroll-view';
 
 const Login = () => {
   const navigation: any = useNavigation();
@@ -34,47 +35,51 @@ const Login = () => {
 
   return (
     <SafeAreaContainer>
-      <View style={styles.container}>
-        <Text style={styles.welcomeText}>Welcome back!</Text>
-        <View style={{flexDirection: 'row', gap: 5, marginTop: 20}}>
-          <Text style={styles.label}>New Here?</Text>
-          <TouchableOpacity
-            onPress={() => {
-              navigation.navigate('Register');
-            }}>
-            <Text style={[styles.label, {color: '#D5715B'}]}>
-              Create Account
-            </Text>
-          </TouchableOpacity>
+      <KeyboardAwareScrollView showsVerticalScrollIndicator={false}>
+        <View style={styles.container}>
+          <Text style={styles.welcomeText}>Welcome back!</Text>
+          <View style={{flexDirection: 'row', gap: 5, marginTop: 20}}>
+            <Text style={styles.label}>New Here?</Text>
+            <TouchableOpacity
+              onPress={() => {
+                navigation.navigate('Register');
+              }}>
+              <Text style={[styles.label, {color: '#D5715B'}]}>
+                Create Account
+              </Text>
+            </TouchableOpacity>
+          </View>
+          <View style={{marginTop: '20%'}}>
+            <Input
+              onChange={(txt: any) => setEmail(txt)}
+              imageUri={attherate}
+              placeholder="Email Address"
+            />
+            <Input
+              onChange={(txt: any) => setPassword(txt)}
+              imageUri={security}
+              isSecure={true}
+              placeholder="Password"
+              rightText="Forgot Password"
+              imageStyle={{height: 20, width: 15}}
+              onPressRight={() => {
+                navigation.navigate('ForgotPassword');
+              }}
+            />
+          </View>
+          <View>
+            <RoundButton
+              btnText="Login"
+              onPress={handleSubmit}
+              isDisabled={loading}
+            />
+          </View>
+          <View>
+            <SeperatorText text="or login with" />
+            <SocialLinkButtons />
+          </View>
         </View>
-        <View style={{marginTop: '20%'}}>
-          <Input
-            onChange={(txt: any) => setEmail(txt)}
-            imageUri={attherate}
-            placeholder="Email Address"
-          />
-          <Input
-            onChange={(txt: any) => setPassword(txt)}
-            imageUri={security}
-            isSecure={true}
-            placeholder="Password"
-            rightText="Forgot Password"
-            imageStyle={{height: 20, width: 15}}
-            onPressRight={() => {
-              navigation.navigate('ForgotPassword');
-            }}
-          />
-          <RoundButton
-            btnText="Login"
-            onPress={handleSubmit}
-            isDisabled={loading}
-          />
-        </View>
-        <View>
-          <SeperatorText text="or login with" />
-          <SocialLinkButtons />
-        </View>
-      </View>
+      </KeyboardAwareScrollView>
     </SafeAreaContainer>
   );
 };
@@ -96,10 +101,10 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     marginVertical: 40,
   },
-  container: {flex: 1, justifyContent: 'center'},
+  container: {flex: 1, justifyContent: 'center', marginTop: '26%'},
   welcomeText: {
     fontFamily: 'Be Vietnam',
-    color : '#444',
+    color: '#444',
     fontSize: 32,
     fontWeight: '700',
     lineHeight: 46.75,
@@ -110,6 +115,6 @@ const styles = StyleSheet.create({
     fontWeight: '500',
     lineHeight: 20.45,
     textAlign: 'left',
-    color: '#0000004D',
+    color: 'rgba(0, 0, 0, 0.3)',
   },
 });
