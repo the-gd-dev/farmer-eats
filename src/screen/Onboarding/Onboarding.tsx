@@ -39,7 +39,7 @@ const onboardingContent = [
   },
 ];
 
-const width = Dimensions.get('screen').width - 40;
+const width = Dimensions.get('screen').width;
 
 const Onboarding = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
